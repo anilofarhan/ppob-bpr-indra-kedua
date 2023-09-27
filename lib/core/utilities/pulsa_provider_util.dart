@@ -1,0 +1,45 @@
+import 'package:ppob/core/constant/constants.dart';
+import 'package:ppob/core/model/prefix_pulsa_model.dart';
+
+class PulsaProviderUtil {
+  static Map<String, PrefixPulsaModel> prefixModel = {
+    "0856": PrefixPulsaModel(prefix: "0856", product: Constants.IM3),
+    "0857": PrefixPulsaModel(prefix: "0857", product: Constants.IM3),
+    "0858": PrefixPulsaModel(prefix: "0858", product: Constants.MENTARI),
+    "0855": PrefixPulsaModel(prefix: "0855", product: Constants.MENTARI),
+    "0814": PrefixPulsaModel(prefix: "0814", product: Constants.MENTARI),
+    "0815": PrefixPulsaModel(prefix: "0815", product: Constants.MENTARI),
+    "0816": PrefixPulsaModel(prefix: "0816", product: Constants.MENTARI),
+    "0896": PrefixPulsaModel(prefix: "0896", product: Constants.TRI),
+    "0897": PrefixPulsaModel(prefix: "0897", product: Constants.TRI),
+    "0898": PrefixPulsaModel(prefix: "0898", product: Constants.TRI),
+    "0899": PrefixPulsaModel(prefix: "0899", product: Constants.TRI),
+    "0895": PrefixPulsaModel(prefix: "0895", product: Constants.TRI),
+    "0811": PrefixPulsaModel(prefix: "0811", product: Constants.SIMPATI),
+    "0812": PrefixPulsaModel(prefix: "0812", product: Constants.SIMPATI),
+    "0813": PrefixPulsaModel(prefix: "0813", product: Constants.SIMPATI),
+    "0821": PrefixPulsaModel(prefix: "0821", product: Constants.SIMPATI),
+    "0822": PrefixPulsaModel(prefix: "0822", product: Constants.SIMPATI),
+    "0823": PrefixPulsaModel(prefix: "0823", product: Constants.AS),
+    "0851": PrefixPulsaModel(prefix: "0851", product: Constants.AS),
+    "0852": PrefixPulsaModel(prefix: "0852", product: Constants.AS),
+    "0853": PrefixPulsaModel(prefix: "0853", product: Constants.AS),
+    "0817": PrefixPulsaModel(prefix: "0817", product: Constants.XL),
+    "0818": PrefixPulsaModel(prefix: "0818", product: Constants.XL),
+    "0819": PrefixPulsaModel(prefix: "0819", product: Constants.XL),
+    "0859": PrefixPulsaModel(prefix: "0859", product: Constants.XL),
+    "0877": PrefixPulsaModel(prefix: "0877", product: Constants.XL),
+    "0878": PrefixPulsaModel(prefix: "0878", product: Constants.XL),
+    "0838": PrefixPulsaModel(prefix: "0838", product: Constants.AXIS),
+    "0831": PrefixPulsaModel(prefix: "0831", product: Constants.AXIS),
+    "0832": PrefixPulsaModel(prefix: "0832", product: Constants.AXIS),
+    "0833": PrefixPulsaModel(prefix: "0833", product: Constants.AXIS),
+    "0881": PrefixPulsaModel(prefix: "0881", product: Constants.SMART),
+    "0882": PrefixPulsaModel(prefix: "0882", product: Constants.SMART),
+    "0883": PrefixPulsaModel(prefix: "0883", product: Constants.SMART),
+    "0884": PrefixPulsaModel(prefix: "0884", product: Constants.SMART),
+    "0887": PrefixPulsaModel(prefix: "0887", product: Constants.SMART),
+    "0888": PrefixPulsaModel(prefix: "0888", product: Constants.SMART),
+    "0889": PrefixPulsaModel(prefix: "0889", product: Constants.SMART)
+  };
+}

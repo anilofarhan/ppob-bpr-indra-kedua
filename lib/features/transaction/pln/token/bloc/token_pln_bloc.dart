@@ -63,7 +63,11 @@ class PaymentTokenPlnBloc extends Bloc<PaymentTokenPlnEvent, BlocState> {
     List<String> col1 = data.customerData!.trim().split("_");
     print("_ "+data.customerData!);
     // DateTime dt = col1[0].toDateTime();
-    String tgl = col1[0].formatDateTime12String();
+
+    //hereppob
+    // String tgl = col1[0].formatDateTime12String();
+    List<String> tgl = col1[0].formatDateTime12String().split(" ");
+
     String total = col1[24].trim().isNotEmpty ? col1[24].trim().formatDouble() : data.billAmount!.currencyFormat();
 
     String s = col1.length > 24
@@ -77,7 +81,13 @@ class PaymentTokenPlnBloc extends Bloc<PaymentTokenPlnEvent, BlocState> {
 
     String content = "<div style='width:100%;font-size:16px; padding:5px;'><br/>"
             "<div style='font-size:22px;width:100%;text-align:center;'>TRANSAKSI SUKSES</div>"
-            "<br/><br/>Tanggal: $tgl WITA<br/><br/>" +
+            "<br/>"
+        //hereppob
+        // "<br/>Tanggal: $tgl WITA<br/>"
+        "<div style='text-align:center;'>"
+        "<br/>Tanggal: ${tgl[0]}<br/>"
+        "Jam: ${tgl[1]} WITA<br/></div>"
+        "<br/>" +
         col1[8] +
         "<br/>" +
         col1[9] +

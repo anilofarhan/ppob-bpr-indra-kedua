@@ -138,7 +138,10 @@ class _PulsaPrabayarScreenState extends State<_PulsaPrabayarLayout> {
               // 50100002221116164915 11000 TELKOMSEL
               // print("data.trxid "+data!.trxid!+" "+data!.billAmount!.toString()+" "+data.produk!);
               // var col1 = "161122163833 _SIMPATI_081287372727_10000_SN10-081287372727".split("_");
-              final dt = col1![0].trim().toDateTime();
+
+              //hereppob
+              // final dt = col1![0].trim().toDateTime();
+              List<String> tgl = col1![0].formatDateTime12String().split(" ");
 
               /*String ss = "<div style='width:100%;font-size:16px'><br/>" +
                   "<div style='font-size:22px;width:100%;text-align:center;'>TRANSAKSI SUKSES</div>" +
@@ -164,10 +167,17 @@ class _PulsaPrabayarScreenState extends State<_PulsaPrabayarLayout> {
                   "</td></tr></table></div>";*/
 
               String ss = "<div style='width:100%;font-size:16px'><br/>" +
-                  "<div style='font-size:22px;width:100%;text-align:center;'>TRANSAKSI SUKSES</div>" +
-                  "<br/><br/>Tanggal: " +
-                  dt.dateFotmat(pattern: "dd/MM/yyyy HH:mm:ss") +
-                  " WITA<br/><br/><div style='font-weight: bold;'>" +
+                  "<div style='font-size:22px;width:100%;text-align:center;'>TRANSAKSI SUKSES</div><br/>" +
+                  "<br/>"
+                  //hereppob
+                  // "Tanggal: " +
+                  // dt.dateFotmat(pattern: "dd/MM/yyyy HH:mm:ss") +
+                  // " WITA<br/>"
+                  "<div style='text-align:center;'>"
+                  "<br/>Tanggal: ${tgl[0]}<br/>"
+                  "Jam: ${tgl[1]} WITA<br/></div>"
+                  "<br/>"
+                  "<div style='font-weight: bold;'>" +
                   data.produk! +
                   "</div><br/><table style='width:100%;'><tr><td style='width:100px;'>PRODUK</td><td>\t\t:\t\t</td>" +
                   "<td>" +

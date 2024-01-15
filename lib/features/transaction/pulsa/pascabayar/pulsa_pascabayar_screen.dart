@@ -185,12 +185,23 @@ class _PulsaPascabayarScreenState extends State<_PulsaPascabayarLayout> {
             if (state is PaymentPulsaPascabayarSuccessState) {
               var data = state.data;
               var col1 = data.customerData?.trim().split("_");
-              final dt = col1![0].trim().toDateTime();
+
+              //hereppob
+              // final dt = col1![0].trim().toDateTime();
+              List<String> tgl = col1![0].formatDateTime12String().split(" ");
 
               String ss = "<div style='width:100%;font-size:16px'><br/><div style='font-size:22px;width:100%;text-align:center;'>" +
-                  "TRANSAKSI SUKSES</div><br/><br/>Tanggal: " +
-                  dt.dateFotmat(pattern: "dd/MM/yyyy HH:mm:ss") +
-                  " WITA<br/><br/><table style='width:100%;'><tr><td style='width:80px;'>REF</td><td>\t\t:\t\t</td><td></td></tr><tr><td colspan='3'>" +
+                  "TRANSAKSI SUKSES</div><br/>"
+                  "<br/>"
+                  //hereppob
+                  // "Tanggal: " +
+                  // dt.dateFotmat(pattern: "dd/MM/yyyy HH:mm:ss") +
+                  // " WITA<br/>"
+                  "<div style='text-align:center;'>"
+                  "<br/>Tanggal: ${tgl[0]}<br/>"
+                  "Jam: ${tgl[1]} WITA<br/></div>"
+                  "<br/>"
+                  "<table style='width:100%;'><tr><td style='width:80px;'>REF</td><td>\t\t:\t\t</td><td></td></tr><tr><td colspan='3'>" +
                   col1[6] +
                   "</td></tr><tr><td>OPERATOR</td><td>\t\t:\t\t</td><td>" +
                   col1[1] +

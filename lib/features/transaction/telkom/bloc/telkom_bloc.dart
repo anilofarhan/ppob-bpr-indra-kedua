@@ -57,11 +57,21 @@ class TelkomBloc extends Bloc<TelkomEvent, BlocState> {
     // List<String> col1 = "231122131357 _TELEPON_02175910000_DUM""MY TELKOM IPN-01_JPA            :_-___JAN 2014-      46.35500____46355_3000__'49355_".replaceAll("\$", "").replaceAll("'", "").trim().split("_");
     // List<String> col1 = "221122174344 _TELEPON_02175910000_DUM""MY TELKOM IPN-01_JPA            :_-___JAN 2014-      46.35500____46355_3000__'49355_".replaceAll("\$", "").replaceAll("'", "").trim().split("_");
     // print("data2 "+col1[0]+" "+col1[1]+" "+" "+col1[2]+" "+" "+col1[3]+" "+" "+col1[4]+" "+" "+col1[5]+" "+" "+col1[6]+" "+" "+col1[7]+" "+" "+col1[8]+" "+" "+col1[9]+" ");
-    String tgl = col1[0].formatDateTime12String();
+
+    //hereppob
+    // String tgl = col1[0].formatDateTime12String();
+    List<String> tgl = col1[0].formatDateTime12String().split(" ");
+
     // List<String> tgl2 = tgl.split(" ");
     String content = "<div style='width:100%;font-size:16px; padding:5px;'><br/>"
             "<div style='font-size:22px;width:100%;text-align:center; padding-bottom:10px;'>TRANSAKSI SUKSES</div>"
-            "<br/><br/>Tanggal: $tgl WITA<br/><br/>" +
+            "<br/>"
+        //hereppob
+        //"<br/>Tanggal: $tgl WITA<br/>"
+        "<div style='text-align:center;'>"
+        "<br/>Tanggal: ${tgl[0]}<br/>"
+        "Jam: ${tgl[1]} WITA<br/></div>"
+        "<br/>" +
         col1[10] +
         "" +
         "<table style='width:100%;font-size:14px'>" +
@@ -116,12 +126,22 @@ class TelkomBloc extends Bloc<TelkomEvent, BlocState> {
     if(col1[15]==null || col1[15]==""){
       totalbayar = "0";
     }
-    String tgl = col1[0].formatDateTime12String();
+
+    //hereppob
+    // String tgl = col1[0].formatDateTime12String();
+    List<String> tgl = col1[0].formatDateTime12String().split(" ");
+
     String content = "<div style='width:100%;font-size:16px;padding:5px;'><br/>"
             "<div style='font-size:22px;width:100%;text-align:center;padding-bottom:10px;'>TRANSAKSI SUKSES</div>"
-            "<br/><br/>Tanggal: $tgl WITA<br/><br/>REF: " +
+            "<br/>"
+        //hereppob
+        // "<br/>Tanggal: $tgl WITA<br/>"
+        "<div style='text-align:center;'>"
+        "<br/>Tanggal: ${tgl[0]}<br/>"
+        "Jam: ${tgl[1]} WITA<br/></div>"
+        "<br/>"
+        "REF: " +
         col1[10] +
-
         "<br/><table style='width:100%;font-size:14px'>" +
         "<tr><td style='width:80px;'>JENIS TRX</td><td>\t\t:\t\t</td>" +
         "<td>" +

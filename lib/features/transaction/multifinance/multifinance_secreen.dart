@@ -175,13 +175,23 @@ class _MultifinanceScreenState extends State<_MultifinanceScreenLayout> {
               if (state is PaymentMultifinanceSuccessState) {
                 var data = state.data;
                 var col1 = data.customerData?.trim().split("_");
-                final dt = col1![0].trim().toDateTime();
+
+                //hereppob
+                // final dt = col1![0].trim().toDateTime();
+                List<String> tgl = col1![0].formatDateTime12String().split(" ");
 
                 final ss = "<div style='width:100%;font-size:16px'><br/>" +
                     "<div style='font-size:22px;width:100%;text-align:center;'>" +
-                    "TRANSAKSI SUKSES</div><br/><br/>Tanggal: " +
-                    dt.dateFotmat(pattern: "dd/MM/yyyy HH:mm:ss") +
-                    " WITA<br/><br/>" +
+                    "TRANSAKSI SUKSES</div><br/>"
+                    "<br/>"
+                    //hereppob
+                    // "Tanggal: " +
+                    // dt.dateFotmat(pattern: "dd/MM/yyyy HH:mm:ss") +
+                    // " WITA<br/>"
+                    "<div style='text-align:center;'>"
+                    "<br/>Tanggal: ${tgl[0]}<br/>"
+                    "Jam: ${tgl[1]} WITA<br/></div>"
+                    "<br/>" +
                     col1[2] +
                     "<br/><table style='width:100%;'><tr><td style='width:80px;'>PRODUK</td><td>\t\t:\t\t</td><td>" +
                     col1[1] +

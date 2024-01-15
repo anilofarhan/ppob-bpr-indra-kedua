@@ -54,7 +54,11 @@ class BPJSBloc extends Bloc<BPJSEvent, BlocState> {
     List<String> col1 = data.customerData!.trim().split("_");
     // DateTime dt = col1[0].toDateTime();
     // String tgl = col1[0].substring(1, 12).formatDateTime12();
-    String tgl = col1[0].formatDateTime12String();
+
+    //hereppob
+    // String tgl = col1[0].formatDateTime12String();
+    List<String> tgl = col1[0].formatDateTime12String().split(" ");
+
     String total = col1[6].trim().isNotEmpty ? col1[6].trim().formatDouble() : data.billAmount!.currencyFormat();
 
     String s = "<tr style='font-weight: bold;'>"
@@ -65,9 +69,15 @@ class BPJSBloc extends Bloc<BPJSEvent, BlocState> {
         "</tr>";
 
     String content = "<div style='width:100%;font-size:16px'><br/>"
-            "<div style='font-size:22px;width:100%;text-align:center;'>TRANSAKSI SUKSES</div><br/><br/>"
-            "<br/>Tanggal: $tgl WITA<br/>"
-            "<br/><table style='width:100%;'>"
+            "<div style='font-size:22px;width:100%;text-align:center;'>TRANSAKSI SUKSES</div><br/>"
+        "<br/>"
+        //hereppob
+        // "<br/>Tanggal: $tgl WITA<br/>"
+        "<div style='text-align:center;'>"
+        "<br/>Tanggal: ${tgl[0]}<br/>"
+        "Jam: ${tgl[1]} WITA<br/></div>"
+        "<br/>"
+        "<table style='width:100%;'>"
             "<tr><td style='width:80px;'>PRODUK</td><td>\t\t:\t\t</td>"
             "<td>" +
         data.produk! +

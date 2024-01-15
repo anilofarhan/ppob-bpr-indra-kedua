@@ -125,11 +125,22 @@ class _SaldoDanaScreenState extends State<_SaldoDanaScreenLayout> {
             if (state is PaymentPulsaSuccessState) {
               var data = state.datas[0];
               var col1 = data.customerData?.trim().split("_");
-              String tgl = col1![0].formatDateTime12String();
+
+              //hereppob
+              // String tgl = col1![0].formatDateTime12String();
+              List<String> tgl = col1![0].formatDateTime12String().split(" ");
+
               // List<String> tgl2 = tgl.split(" ");
               String ss = "<div style='width:100%;font-size:16px; padding:5px;'><br/>"
-                  "<div style='font-size:22px;width:100%;text-align:center; padding-bottom:2px;'>TRANSAKSI SUKSES</div><br/>"
-                  "<div style='text-align:center;'>Tanggal: $tgl WITA<br/></div>" +
+                  "<div style='font-size:22px;width:100%;text-align:center; padding-bottom:2px;'>TRANSAKSI SUKSES</div>"
+                  "<br/>"
+                  //hereppob
+                  // "<div style='text-align:center;'>Tanggal: $tgl WITA<br/>"
+                  // "</div>" +
+                  "<div style='text-align:center;'>"
+                  "<br/>Tanggal: ${tgl[0]}<br/>"
+                  "Jam: ${tgl[1]} WITA<br/></div>"
+                  "<br/>"
                   "<div style='text-align:center;font-weight: bold;padding-bottom:5px;'>TOP UP SALDO " +
                   col1[1] +
                   "</div><br/>" +

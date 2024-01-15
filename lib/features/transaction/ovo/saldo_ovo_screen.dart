@@ -113,13 +113,23 @@ class _SaldoOvoScreenState extends State<_SaldoOvoScreenLayout> {
               if (state is PaymentPulsaSuccessState) {
                 var data = state.datas[0];
                 var col1 = data.customerData?.trim().split("_");
-                final dt = col1![0].trim().toDateTime();
+
+                //hereppob
+                // final dt = col1![0].trim().toDateTime();
+                List<String> tgl = col1![0].formatDateTime12String().split(" ");
 
                 final ss = "<div style='width:100%;font-size:16px'>" +
                     "<br/><div style='font-size:22px;width:100%;text-align:center;'>TRANSAKSI SUKSES</div><br/>" +
-                    "<br/>Tanggal: " +
-                    dt.dateFotmat(pattern: "dd/MM/yyyy HH:mm:ss") +
-                    " WITA<br/><br/><div style='font-weight: bold;'>TOP UP SALDO " +
+                    "<br/>"
+                    //hereppob
+                    // "Tanggal: " +
+                    // dt.dateFotmat(pattern: "dd/MM/yyyy HH:mm:ss") +
+                    // " WITA<br/>"
+                    "<div style='text-align:center;'>"
+                    "<br/>Tanggal: ${tgl[0]}<br/>"
+                    "Jam: ${tgl[1]} WITA<br/></div>"
+                    "<br/>"
+                    "<div style='font-weight: bold;'>TOP UP SALDO " +
                     col1[1] +
                     "</div><br/><table style='width:100%;'>" +
                     "<tr><td>REF</td>" +

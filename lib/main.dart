@@ -67,7 +67,7 @@ class _LoginLayoutState extends State<LoginLayout> {
      //     .add(LoginUserRequestEvent(user: "XamgVaKT1551", pass: "bpr456"));
 
      BlocProvider.of<LoginBloc>(context)
-         .add(LoginUserRequestEvent(user: "nikdeka44", pass: "bpr123"));
+         .add(LoginUserRequestEvent(user: "trsnadew2", pass: "bpr111"));
   }
 
   @override

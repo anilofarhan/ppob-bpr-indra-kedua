@@ -121,7 +121,7 @@ class PaymentTokenPlnBloc extends Bloc<PaymentTokenPlnEvent, BlocState> {
         "</td>" +
         "</tr>" +
         "<tr>" +
-        "<td>Rp BAYAR</td><td>\t\t:\t\t</td>" +
+        "<td>PEMBAYARAN</td><td>\t\t:\t\t</td>" +
         "<td>Rp." +
         col1[10].trim().formatDouble() +
         "</td>" +

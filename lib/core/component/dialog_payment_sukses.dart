@@ -6,6 +6,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:ppob/core/component/my_widget.dart';
 import 'package:ppob/core/constant/assets.dart';
 import 'package:ppob/core/constant/strings.dart';
 import 'package:ppob/core/constant/Style.dart' as app_style;
@@ -22,6 +23,8 @@ class DialogPaymentSukses extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("asd: ${Assets.logo}");
+
     return WillPopScope(
       child: Dialog(
         insetPadding: EdgeInsets.all(10.w),
@@ -43,9 +46,9 @@ class DialogPaymentSukses extends StatelessWidget {
                     //herelogo
                     Padding(
                       padding: const EdgeInsets.fromLTRB(16, 30, 16, 0),
-                      child: Image.asset(
-                        Assets.logo,
-                        scale: 0.1, height: 46,
+                      child: ImageAsset(
+                        imgPath: Assets.logo,
+                        fit: BoxFit.fitHeight, height: 46,
                       ),
                     ),
                     Html(data: htmlStr),

@@ -39,6 +39,14 @@ class DialogPaymentSukses extends StatelessWidget {
                       Strings.detail_transaksi,
                       style: app_style.Style.text18spBlackBold,
                     ),
+                    //herelogo
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 30, 16, 16),
+                      child: Image.asset(
+                        'assets/icons/logo.png',
+                        scale: 0.1, height: 46,
+                      ),
+                    ),
                     Html(data: htmlStr),
                   ],
                 ),

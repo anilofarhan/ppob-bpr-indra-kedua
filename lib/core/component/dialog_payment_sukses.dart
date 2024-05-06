@@ -23,8 +23,6 @@ class DialogPaymentSukses extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("asd: ${Assets.logo}");
-
     return WillPopScope(
       child: Dialog(
         insetPadding: EdgeInsets.all(10.w),

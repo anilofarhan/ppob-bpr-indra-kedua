@@ -77,6 +77,7 @@ class _LoginLayoutState extends State<LoginLayout> {
         BlocListener<LoginBloc, LoginState>(
           listener: (context, state) {
             if (state is LoginSuccessState) {
+              // Constants.NO_REKENING = "0140020004";
               Constants.NO_REKENING = state.baseResponse?.data![0].noRek ?? "";
               Constants.PIN_TRANSAKSI = state.baseResponse?.data![0].pinTransaksi ?? "";
               Constants.isFinger = state.baseResponse?.data![0].flagFingerprint==1;

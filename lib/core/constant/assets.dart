@@ -1,6 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
 class Assets {
+  static const String logo = "assets/icons/logo.png";
   static const String ic_pulsa_prabayar = "assets/icons/pulsa_prabayar.png";
   static const String ic_pulsa_pascabayar = "assets/icons/pulsa_pascabayar.png";
   static const String ic_paket_data = "assets/icons/paket_data.png";

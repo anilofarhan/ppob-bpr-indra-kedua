@@ -26,74 +26,76 @@ class DialogPaymentSukses extends StatelessWidget {
     return WillPopScope(
       child: Dialog(
         insetPadding: EdgeInsets.all(10.w),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            RepaintBoundary(
-              key: key3,
-              child: Container(
-                color: Colors.white,
-                padding:
-                    const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
-                child: Column(
-                  children: [
-                    Text(
-                      Strings.detail_transaksi,
-                      style: app_style.Style.text18spBlackBold,
-                    ),
-                    //herelogo
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 30, 16, 0),
-                      child: ImageAsset(
-                        imgPath: Assets.logo,
-                        fit: BoxFit.fitHeight, height: 46,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              RepaintBoundary(
+                key: key3,
+                child: Container(
+                  color: Colors.white,
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 16, horizontal: 10),
+                  child: Column(
+                    children: [
+                      Text(
+                        Strings.detail_transaksi,
+                        style: app_style.Style.text18spBlackBold,
                       ),
-                    ),
-                    Html(data: htmlStr),
-                  ],
+                      //herelogo
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(16, 30, 16, 0),
+                        child: ImageAsset(
+                          imgPath: Assets.logo,
+                          fit: BoxFit.fitHeight, height: 46,
+                        ),
+                      ),
+                      Html(data: htmlStr),
+                    ],
+                  ),
                 ),
               ),
-            ),
 
-            Padding(
-              padding: const EdgeInsets.fromLTRB(21.0, 16.0, 21.0, 10.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  // Navigator.pop(context, true);
-                  shareInboxDetail(fileName+"");
-                },
-                child: Center(
-                  child: Text("share".toUpperCase()),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(21.0, 16.0, 21.0, 10.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    // Navigator.pop(context, true);
+                    shareInboxDetail(fileName+"");
+                  },
+                  child: Center(
+                    child: Text("share".toUpperCase()),
+                  ),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.blue),
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15))),
+                      padding: MaterialStateProperty.all(
+                          const EdgeInsets.symmetric(vertical: 15))),
                 ),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15))),
-                    padding: MaterialStateProperty.all(
-                        const EdgeInsets.symmetric(vertical: 15))),
               ),
-            ),
 
-            Padding(
-              padding: const EdgeInsets.fromLTRB(21.0, 2.0, 21.0, 16.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pop(context, true);
-                  if (onTutupPressed != null) {
-                    onTutupPressed!.call();
-                  }
-                },
-                child: Center(
-                  child: Text(Strings.tutup.toUpperCase()),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(21.0, 2.0, 21.0, 16.0),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context, true);
+                    if (onTutupPressed != null) {
+                      onTutupPressed!.call();
+                    }
+                  },
+                  child: Center(
+                    child: Text(Strings.tutup.toUpperCase()),
+                  ),
+                  style: ButtonStyle(
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15))),
+                      padding: MaterialStateProperty.all(
+                          const EdgeInsets.symmetric(vertical: 15))),
                 ),
-                style: ButtonStyle(
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15))),
-                    padding: MaterialStateProperty.all(
-                        const EdgeInsets.symmetric(vertical: 15))),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
       onWillPop: () async {

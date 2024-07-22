@@ -57,26 +57,35 @@ class DialogPaymentSukses extends StatelessWidget {
               ),
 
               Padding(
-                padding: const EdgeInsets.fromLTRB(21.0, 16.0, 21.0, 10.0),
+                padding: const EdgeInsets.fromLTRB(25.0, 16.0, 25, 0),
                 child: ElevatedButton(
                   onPressed: () {
                     // Navigator.pop(context, true);
                     shareInboxDetail(fileName+"");
                   },
                   child: Center(
-                    child: Text("share".toUpperCase()),
+                    child: Text(
+                      "BAGIKAN".toUpperCase(),
+                      style: TextStyle(color: Colors.red),
+                    ),
                   ),
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.blue),
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15))),
-                      padding: MaterialStateProperty.all(
-                          const EdgeInsets.symmetric(vertical: 15))),
+                    side: MaterialStateProperty.all(BorderSide(width: 1.0, color: Colors.red)),
+                    backgroundColor: MaterialStateProperty.all(Colors.white),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                    padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 5)),
+                  ),
+                  // style: ButtonStyle(
+                  //   backgroundColor: MaterialStateProperty.all(Colors.blue),
+                  //     shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(15))),
+                  //     padding: MaterialStateProperty.all(
+                  //         const EdgeInsets.symmetric(vertical: 15))),
                 ),
               ),
 
               Padding(
-                padding: const EdgeInsets.fromLTRB(21.0, 2.0, 21.0, 16.0),
+                padding: const EdgeInsets.fromLTRB(25.0, 0, 25.0, 16.0),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.pop(context, true);
@@ -88,10 +97,15 @@ class DialogPaymentSukses extends StatelessWidget {
                     child: Text(Strings.tutup.toUpperCase()),
                   ),
                   style: ButtonStyle(
-                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15))),
-                      padding: MaterialStateProperty.all(
-                          const EdgeInsets.symmetric(vertical: 15))),
+                    backgroundColor: MaterialStateProperty.all(Colors.red[600]),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                    padding: MaterialStateProperty.all(EdgeInsets.symmetric(vertical: 5)),
+                  ),
+                  // style: ButtonStyle(
+                  //     shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(15))),
+                  //     padding: MaterialStateProperty.all(
+                  //         const EdgeInsets.symmetric(vertical: 15))),
                 ),
               )
             ],

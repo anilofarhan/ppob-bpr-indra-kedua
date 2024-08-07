@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ppob/core/bloc/bloc_state.dart';
 import 'package:ppob/core/constant/constants.dart';
-import 'package:ppob/features/transaction/pdam/bloc/pdam_state.dart';
 import 'package:ppob/features/transaction/tv/bloc/tv_berbayar_event.dart';
 import 'package:ppob/features/transaction/tv/bloc/tv_berbayar_state.dart';
 import 'package:ppob/features/transaction/tv/repositories/tv_prabayar_repository.dart';
@@ -19,7 +18,7 @@ class InquiryTvBloc extends Bloc<InquiryTvEvent, BlocState> {
         var results = await repository.postInquiryTvPrabayar(event);
         yield HideLoadingState();
         if (results.status == Constants.RC_SUKSES) {
-          yield InquiryPdamSuccessState(results.data![0]);
+          yield InquiryTvSuccessState(results.data![0]);
         } else {
           yield ErrorState(message: results.description);
         }

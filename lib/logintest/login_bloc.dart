@@ -39,8 +39,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         "username": event.user ?? "",
         "method": RequestMethod.LOGIN,
         "pin": pinBlock,
-        "serialNo": "9dba36ce4ae88259",
-        "traceNo": "5344"
+        "serialNo": "6f0398d1387b7377",
+        "traceNo": "5346"
       };
 
       String data = payloadEncrypt(
